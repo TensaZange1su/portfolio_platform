@@ -1,0 +1,9 @@
+<h1>Latest News</h1>
+<ul>
+    <% articles.forEach(article => { %>
+        <li>
+            <a href="<%= article.url %>" target="_blank"><%= article.title %></a>
+            <p><%= article.description %></p>
+        </li>
+    <% }); %>
+</ul>

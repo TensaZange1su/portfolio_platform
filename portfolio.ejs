@@ -1,0 +1,26 @@
+<div>
+    <% items.forEach(item => { %>
+        <div class="portfolio-item">
+            <h3><%= item.title %></h3>
+            <p><%= item.description %></p>
+            <!-- Bootstrap Carousel -->
+            <div id="carousel-<%= item._id %>" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <% item.images.forEach((image, index) => { %>
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                            <img src="<%= image %>" class="d-block w-100" alt="Image for <%= item.title %>">
+                        </div>
+                    <% }); %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= item._id %>" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-<%= item._id %>" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    <% }); %>
+</div>
